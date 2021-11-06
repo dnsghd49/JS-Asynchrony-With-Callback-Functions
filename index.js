@@ -10,11 +10,7 @@ function looping() {
                 npc.walkEast(1500, () => {
                     npc.walkSouth(1500, () => {
                         npc.walkWest(2700, () => {
-                            npc.walkNorth(400, () => { 
-                                for (let i = 0; i < 1; i++) {
-                                    looping()
-                                }
-                            })
+                            npc.walkNorth(400, () => {})
                         })
                     })
                 })
@@ -22,7 +18,8 @@ function looping() {
         })
     })
 }
-looping()
+
+setInterval(looping)
 
 // Create the inventory
 const inventory = newInventory()
