@@ -3,27 +3,15 @@ const pc = newPlayableCharacter(100, 110)
 
 // Create a non-playable character
 const npc = newNonPlayableCharacter(50, 300)
-function looping() {
-    npc.walkNorth(1400, () => {
-        npc.walkEast(1200, () => {
-            npc.walkSouth(300, () => {
-                npc.walkEast(1500, () => {
-                    npc.walkSouth(1500, () => {
-                        npc.walkWest(2700, () => {
-                            npc.walkNorth(400, () => { 
-                                for (let i = 0; i < 1; i++) {
-                                    looping()
-                                }
-                            })
-                        })
-                    })
-                })
-            })
-        })
-    })
-}
-looping()
 
+npc.walkNorth(1400)
+    .then(() => npc.walkEast(1200))
+    .then(() => npc.walkSouth(300))
+    .then(() => npc.walkEast(1500))
+    .then(() => npc.walkSouth(1500))
+    .then(() => npc.walkWest(2700))
+    .then(() => npc.walkNorth(400))
+    
 // Create the inventory
 const inventory = newInventory()
 move(inventory).to(0, 0)
