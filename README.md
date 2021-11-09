@@ -1,4 +1,4 @@
-# Web Game V
+# Web Game Part VI
 
 This is an activity for FSWD Lesson 5.4.2- Practicing Asynchrony with Callback Functions
 
